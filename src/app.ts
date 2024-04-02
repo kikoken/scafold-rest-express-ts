@@ -9,14 +9,14 @@ import UserRoutes  from '@interfaces/routes/user.routes'
 const app: Application = express()
 const PORT = 3000
 const logger = pino()
-
+const version = '/v1'
 
 app.use(express.json())
 app.use(cors())
 app.use(helmet())
 
-app.use('/users', UserRoutes)
-app.use('/health', HealthCheck)
+app.use(`${version}/users`, UserRoutes)
+app.use(`${version}/health`, HealthCheck)
 
 // Manejo de errores global
 process.on('uncaughtException', (err) => {
