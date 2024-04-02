@@ -1,11 +1,13 @@
-import { User } from '@domain/user/User'
+import { User, UserModel } from '@domain/user/User'
 import { UserRepository } from '@domain/user/User.repository'
+import { v4 as uuidv4 } from 'uuid'
 
 export class UserMemoryRepository implements UserRepository {
-  private users: User[] = []
+  private users: UserModel[] = []
 
   async save(user: User): Promise<User> {
-    this.users.push(user)
+    const newUser = { ...user, id: uuidv4(), createdAt: new Date() }
+    this.users.push(newUser)
     return user
   }
 

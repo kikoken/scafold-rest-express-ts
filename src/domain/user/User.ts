@@ -7,6 +7,11 @@ export type User = {
     password: string;
 }
 
+export type UserModel = User & {
+    id: string;
+    createdAt: Date;
+}
+
 export const UserSchema = z.object({
     name: z.string().min(3),
     email: z.string().email(),
