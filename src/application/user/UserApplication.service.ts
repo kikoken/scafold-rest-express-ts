@@ -1,8 +1,8 @@
-import { User } from '@domain/user/User';
+import { User, UserResponse } from '@domain/user/User';
 import { UserService } from '@domain/user/User.service';
 
 export const UserApplicationService = (userService: ReturnType<typeof UserService>) => {
-    const getAllUsers = async () => {
+    const getAllUsers = async ():Promise<UserResponse[]> => {
         return await userService.getAllUsers();
     }
 

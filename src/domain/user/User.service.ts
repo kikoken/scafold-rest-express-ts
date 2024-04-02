@@ -1,10 +1,14 @@
-import { User, createInvalidaArgumentError, createNewUser } from './User'
+import { User, UserModel, UserResponse, createInvalidaArgumentError, createNewUser } from './User'
 import { UserRepository } from './User.repository'
 import { isValidEmail } from './User.validation'
 
 export const UserService = (userRepository: UserRepository) => {
-    const getAllUsers = async ():Promise<User[] | []> => {
-        return await userRepository.findAll()
+    const getAllUsers = async ():Promise<UserResponse[] | []> => {
+        const users: UserModel[] = await userRepository.findAll()
+        return users.map(user => {
+            const { id, name, email, createdAt } = user
+            return { id, name, email, createdAt }
+        })
     }
 
     const findUserByEmail = async (email: string): Promise<User | null> => {

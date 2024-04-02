@@ -12,6 +12,8 @@ export type UserModel = User & {
     createdAt: Date;
 }
 
+export type UserResponse = Omit<UserModel, 'password'>
+
 export const UserSchema = z.object({
     name: z.string().min(3),
     email: z.string().email(),
