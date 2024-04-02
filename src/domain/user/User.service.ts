@@ -1,5 +1,6 @@
-import { User } from './User'
+import { User, createInvalidaArgumentError, createNewUser } from './User'
 import { UserRepository } from './User.repository'
+import { isValidEmail } from './User.validation'
 
 export const UserService = (userRepository: UserRepository) => {
     const getAllUsers = async ():Promise<User[] | []> => {
@@ -7,11 +8,14 @@ export const UserService = (userRepository: UserRepository) => {
     }
 
     const findUserByEmail = async (email: string): Promise<User | null> => {
+        if(!isValidEmail(email)) throw createInvalidaArgumentError('Invalid email', 400)
+        
         return await userRepository.findByEmail(email)
     }
     
     const createUser = async (user: User):Promise<User> => {
-        return await userRepository.save(user)
+        const newUser = createNewUser(user.name, user.email, user.password)
+        return await userRepository.save(newUser)
     }
     
     return { getAllUsers, createUser, findUserByEmail }
