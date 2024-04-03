@@ -17,7 +17,7 @@ export const UserService = (userRepository: UserRepository) => {
         return await userRepository.findByEmail(email)
     }
     
-    const createUser = async (user: User):Promise<User> => {
+    const createUser = async (user: User):Promise<User | null> => {
         const newUser = createNewUser(user.name, user.email, user.password)
         return await userRepository.save(newUser)
     }
