@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "typeRoots": ["node_modules/@types"],
-      "module": "commonjs",
-      "outDir": "./dist",
-      "strict": true,
-      "esModuleInterop": true,
-      "baseUrl": "./",
-      "paths": {
-        "@domain/*": ["src/domain/*"],
-        "@application/*": ["src/application/*"],
-        "@infrastructure/*": ["src/infrastructure/*"],
-        "@interfaces/*": ["src/interfaces/*"],
-        "@src/*": ["src/*"]
-      }
-    },
-    "include": ["src/**/*"]
-  }
+  "compilerOptions": {
+    "target": "es6",
+    "typeRoots": ["node_modules/@types"],
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@domain/*": ["src/domain/*"],
+      "@application/*": ["src/application/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@src/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
   
