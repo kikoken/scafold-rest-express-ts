@@ -1,6 +1,5 @@
-export interface Error {
-    message: string;
+export interface ErrorType extends Error {
     code?: number;
 }
 
-export type InvalidArgumentError = Error
+export type InvalidArgumentError = ErrorType
