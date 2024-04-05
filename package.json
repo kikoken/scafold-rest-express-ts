@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.ts": [
+    "src/**/*.ts": [
       "prettier --write --ignore-unknown",
       "git add"
     ]
