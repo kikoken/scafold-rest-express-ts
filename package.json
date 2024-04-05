@@ -4,18 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register src/app.ts"
+    "dev": "ts-node-dev -r tsconfig-paths/register src/app.ts",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
     "*.ts": [
-      "prettier --write",
+      "prettier --write --ignore-unknown",
       "git add"
     ]
   },

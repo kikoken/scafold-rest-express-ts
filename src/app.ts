@@ -11,7 +11,7 @@ const PORT = 3000
 const logger = pino()
 const version = '/v1'
 
-app.use(express.json())
+app.use(express.json() )
 app.use(cors())
 app.use(helmet())
 
