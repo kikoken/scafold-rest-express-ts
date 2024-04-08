@@ -1,6 +1,10 @@
 # Boilerplate for Express Project with TypeScript and DDD Architecture
 
 This is a basic boilerplate to start an Express project using TypeScript and following the principles of Domain-Driven Design (DDD). It provides an initial structure that adheres to DDD conventions to organize the application code in a more modular and domain-oriented way.
+This project use husky for:
+- check commit
+- check test
+- cgecj linter
 
 ## Key Features
 - Express.js: Uses Express.js as the framework for building server-side web applications.
@@ -21,7 +25,7 @@ This is a basic boilerplate to start an Express project using TypeScript and fol
 git clone https://github.com/your-username/your-project.git
 
 2. Install the dependencies:
-npm install
+npm install or pnpm or yarn
 
 3. Run the server in development mode:
 npm run dev
@@ -29,6 +33,10 @@ npm run dev
 4.Access the endpoints from your web browser:
 http://localhost:3000/user
 http://localhost:3000/health
+
+5. Run test
+npm run test
+pnpm test
 
 ## Project Structure
 
@@ -39,7 +47,6 @@ The project structure follows the principles of Domain-Driven Design (DDD), orga
     - application/: Contains application services that coordinate operations between domain modules and infrastructure layers.
     - infrastructure/: Contains the implementation of infrastructure layers such as controllers, routes, and repositories.
     - config/: Project configurations such as environment variables.
-    - types/: TypeScript type definitions.
 
 ## Contributions
 Contributions are welcome. If you find a bug or have a suggestion for improvement, please create an issue or send a pull request.
