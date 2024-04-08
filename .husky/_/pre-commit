@@ -1,5 +1,2 @@
 #!/usr/bin/env sh
 . "${0%/*}/h"
-
-# Hook created by Husky
-npx lint-staged
