@@ -10,12 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "lint-staged": {
-    "src/**/*.ts": [
-      "prettier --write --ignore-unknown",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
